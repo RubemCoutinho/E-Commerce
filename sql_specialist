@@ -1,12 +1,12 @@
 -- criação do banco de dados para o cenário de E-commerce 
 -- drop database ecommerce;
 create database ecommerce;
+drop database ecommerce;
 use ecommerce;
-
 -- CRIANDO A TABELA CLIENTE
 -- DEFINI UMA FUNÇÃO CHECK PARA GARANTIR QUE O TIPO CLIENTE SEJA INSERIDO ADEQUADAMENTE.
 CREATE TABLE cliente (
-  id INT PRIMARY KEY auto_increment,
+  idCliente INT PRIMARY KEY auto_increment,
   fname VARCHAR(15),
   lname varchar(15),
   tipo_cliente VARCHAR(2) NOT NULL,
@@ -37,8 +37,8 @@ create table payments(
     idPayment int,
     typePayment enum('Boleto','Cartão','Dois cartões'),
     limitAvailable float,
-    primary key(idClient, idPayment),
-	CONSTRAINT fk_id_client foreign key (id_Cliente) REFERENCES cliente(id)
+    primary key(id_Client, idPayment),
+	CONSTRAINT fk_id_client foreign key (id_Client) REFERENCES cliente(idCliente)
 );
 
 
@@ -51,7 +51,7 @@ create table orders(
     orderDescription varchar(255),
     sendValue float default 10,
     paymentCash boolean default false, 
-    constraint fk_ordes_client foreign key (idOrderClient) references clients(idClient)
+    constraint fk_ordes_client foreign key (idOrderClient) references cliente(idCliente)
 			on update cascade
 );
 alter table orders auto_increment=1;
