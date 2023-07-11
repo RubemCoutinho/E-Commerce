@@ -71,7 +71,7 @@ insert into productSupplier (idPsSupplier, idPsProduct, quantity) values
                                        (2,5,10);
  
 -- idSeller, SocialName, AbstName, CNPJ, CPF, location, contact
-insert into seller (SocialName, AbstName, CNPJ, CPF, location, contact) values 
+insert into seller 			 (SocialName, AbstName, CNPJ, CPF, location, contact) values 
 					         ('Tech eletronics', null, 123456789456321, null, 'Rio de Janeiro', 219946287),
 				    	     ('Botique Durgas',null,null,123456783,'Rio de Janeiro', 219567895),
 					         ('Kids World',null,456789123654485,null,'São Paulo', 1198657484);
