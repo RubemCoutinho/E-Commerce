@@ -1,0 +1,87 @@
+-- VALORES fictícios
+-- Inserção na tabela cliente:
+
+INSERT INTO CLIENTE (fname, lname, tipo_cliente, cpf_cnpj, endereço, telefone, email, inscricao_estadual, razao_social, nome_responsavel, data_nascimento)
+VALUES   ('Maria', 'Souza', 'PF', '12345678901', 'Rua das Flores, 123', '987654321', 'maria@example.com', NULL, NULL, NULL, '1990-08-25'),
+         ('Carlos', 'Santos', 'PF', '98765432109', 'Avenida Central, 456', '123456789', 'carlos@example.com', NULL, NULL, NULL, '1985-03-12'),
+         ('Empresa ABC', '', 'PJ', '12345678901234', 'Rua Principal, 789', '999888777', 'empresa@example.com', '123456', 'Empresa ABC Ltda.', 'José Silva', NULL),
+         ('Empresa XYZ', '', 'PJ', '98765432109876', 'Avenida Secundária, 321', '111222333', 'empresa2@example.com', '654321', 'Empresa XYZ Ltda.', 'Maria Oliveira', NULL),
+         ('João', 'Silva', 'PF', '11122233344', 'Rua da Praça, 789', '444555666', 'joao@example.com', NULL, NULL, NULL, '1988-12-10'),
+         ('Empresa XYZ', '', 'PJ', '55544433322211', 'Avenida Principal, 987', '777888999', 'empresa3@example.com', '987654', 'Empresa XYZ S/A', 'Ana Pereira', NULL);
+
+         select*from cliente;
+INSERT INTO CLIENTE (fname, lname, tipo_cliente, cpf_cnpj, endereço, telefone, email, inscricao_estadual, razao_social, nome_responsavel, data_nascimento)
+VALUES ('Maria', 'Souza', 'PF', '12345678901', 'Rua das Flores, 123', '987654321', 'maria@example.com', NULL, NULL, NULL, '1990-08-25'),
+	   ('Carlos', 'Santos', 'PF', '98765432109', 'Avenida Central, 456', '123456789', 'carlos@example.com', NULL, NULL, NULL, '1985-03-12'),
+	   ('Empresa ABC', '', 'PJ', '12345678901234', 'Rua Principal, 789', '999888777', 'empresa@example.com', '123456', 'Empresa ABC Ltda.', 'José Silva', NULL),
+       ('Empresa XYZ', '', 'PJ', '98765432109876', 'Avenida Secundária, 321', '111222333', 'empresa2@example.com', '654321', 'Empresa XYZ Ltda.', 'Maria Oliveira', NULL),
+	   ('João', 'Silva', 'PF', '11122233344', 'Rua da Praça, 789', '444555666', 'joao@example.com', NULL, NULL, NULL, '1988-12-10'),
+       ('Empresa XYZ', '', 'PJ', '55544433322211', 'Avenida Principal, 987', '777888999', 'empresa3@example.com', '987654', 'Empresa XYZ S/A', 'Ana Pereira', NULL);
+
+-- inserção tabela produto
+insert into product (Pname, classification_kids, category, avaliação, size) values
+							  ('Fone de ouvido',false,'Eletrônico','4',null),
+                              ('Barbie Elsa',true,'Brinquedos','3',null),
+                              ('Body Carters',true,'Vestimenta','5',null),
+                              ('Microfone Vedo - Youtuber',False,'Eletrônico','4',null),
+                              ('Sofá retrátil',False,'Móveis','3','3x57x80'),
+                              ('Farinha de arroz',False,'Alimentos','2',null),
+                              ('Fire Stick Amazon',False,'Eletrônico','3',null);
+
+-- inserção na tabela pedido
+insert into orders (idOrderClient, orderStatus, orderDescription, sendValue, paymentCash) values 
+							 (1, default,'compra via aplicativo',null,1),
+                             (2,default,'compra via aplicativo',50,0),
+                             (3,'Confirmado',null,null,1),
+                             (4,default,'compra via web site',150,0);
+                             
+select * from orders;
+insert into productOrder (idPOproduct, idPOorder, poQuantity, poStatus) values
+						 (1,5,2,null),
+                         (2,5,1,null),
+                         (3,6,1,null);
+
+-- storageLocation,quantity
+insert into productStorage (storageLocation,quantity) values 
+							('Rio de Janeiro',1000),
+                            ('Rio de Janeiro',500),
+                            ('São Paulo',10),
+                            ('São Paulo',100),
+                            ('São Paulo',10),
+                            ('Brasília',60);
+
+-- idLproduct, idLstorage, location
+insert into storageLocation (idLproduct, idLstorage, location) values
+						 (1,2,'RJ'),
+                         (2,6,'GO');
+
+-- idSupplier, SocialName, CNPJ, contact
+insert into supplier (SocialName, CNPJ, contact) values 
+							('Almeida e filhos', 123456789123456,'21985474'),
+                            ('Eletrônicos Silva',854519649143457,'21985484'),
+                            ('Eletrônicos Valma', 934567893934695,'21975474');
+                            
+select * from supplier;
+-- idPsSupplier, idPsProduct, quantity
+insert into productSupplier (idPsSupplier, idPsProduct, quantity) values
+					            	 ( 1,1,500),
+                         (1,2,400),
+                         (2,4,633),
+                         (3,3,5),
+                         (2,5,10);
+
+-- idSeller, SocialName, AbstName, CNPJ, CPF, location, contact
+insert into seller (SocialName, AbstName, CNPJ, CPF, location, contact) values 
+					         ('Tech eletronics', null, 123456789456321, null, 'Rio de Janeiro', 219946287),
+				    	     ('Botique Durgas',null,null,123456783,'Rio de Janeiro', 219567895),
+					         ('Kids World',null,456789123654485,null,'São Paulo', 1198657484);
+
+select * from seller;
+
+-- idPseller, idPproduct, prodQuantity
+insert into productSeller (idPseller, idPproduct, prodQuantity) values 
+              						(1,6,80),
+                          (2,7,10);
+                         
+                         
+                         
