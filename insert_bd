@@ -84,4 +84,8 @@ insert into productSeller (idPseller, idPproduct, prodQuantity) values
                                     (2,7,10);
                          
                          
-                         
+             
+SELECT fname AS nome_cliente, orderStatus AS Status_Da_Compra, orderDescription AS LOJA
+FROM cliente
+INNER JOIN orders ON cliente.idCliente = orders.idOrderClient
+GROUP BY fname, orderStatus, orderDescription;
