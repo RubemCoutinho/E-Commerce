@@ -12,7 +12,7 @@ VALUES   ('Maria', 'Souza', 'PF', '12345678901', 'Rua das Flores, 123', '9876543
          select*from cliente;
 INSERT INTO CLIENTE (fname, lname, tipo_cliente, cpf_cnpj, endereço, telefone, email, inscricao_estadual, razao_social, nome_responsavel, data_nascimento)
 VALUES ('Maria', 'Souza', 'PF', '12345678901', 'Rua das Flores, 123', '987654321', 'maria@example.com', NULL, NULL, NULL, '1990-08-25'),
-	   ('Carlos', 'Santos', 'PF', '98765432109', 'Avenida Central, 456', '123456789', 'carlos@example.com', NULL, NULL, NULL, '1985-03-12'),
+       ('Carlos', 'Santos', 'PF', '98765432109', 'Avenida Central, 456', '123456789', 'carlos@example.com', NULL, NULL, NULL, '1985-03-12'),
 	   ('Empresa ABC', '', 'PJ', '12345678901234', 'Rua Principal, 789', '999888777', 'empresa@example.com', '123456', 'Empresa ABC Ltda.', 'José Silva', NULL),
        ('Empresa XYZ', '', 'PJ', '98765432109876', 'Avenida Secundária, 321', '111222333', 'empresa2@example.com', '654321', 'Empresa XYZ Ltda.', 'Maria Oliveira', NULL),
 	   ('João', 'Silva', 'PF', '11122233344', 'Rua da Praça, 789', '444555666', 'joao@example.com', NULL, NULL, NULL, '1988-12-10'),
@@ -65,11 +65,11 @@ select * from supplier;
 -- idPsSupplier, idPsProduct, quantity
 insert into productSupplier (idPsSupplier, idPsProduct, quantity) values
 					            	 ( 1,1,500),
-                         (1,2,400),
-                         (2,4,633),
-                         (3,3,5),
-                         (2,5,10);
-
+                                      (1,2,400),
+                                      (2,4,633),
+                                        (3,3,5),
+                                       (2,5,10);
+ 
 -- idSeller, SocialName, AbstName, CNPJ, CPF, location, contact
 insert into seller (SocialName, AbstName, CNPJ, CPF, location, contact) values 
 					         ('Tech eletronics', null, 123456789456321, null, 'Rio de Janeiro', 219946287),
@@ -81,7 +81,7 @@ select * from seller;
 -- idPseller, idPproduct, prodQuantity
 insert into productSeller (idPseller, idPproduct, prodQuantity) values 
               						(1,6,80),
-                          (2,7,10);
+                                    (2,7,10);
                          
                          
                          
